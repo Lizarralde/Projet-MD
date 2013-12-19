@@ -63,7 +63,7 @@ public abstract class AbstractSolution extends Frame {
 
         // mettre ici un appel de drawSolutionk avec une liste d'arguments
         // adaptés, par exemple :
-        drawSolutionk(g2d, frameWidth / 20, frameHeight / 20, frameWidth / 4,
+        drawSolutionk(g2d, frameWidth / 4, frameHeight / 4, frameWidth / 4,
                 profondeur);
     }
 
