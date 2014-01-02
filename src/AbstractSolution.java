@@ -1,10 +1,5 @@
-// Pour  Graphics, Frame
 import java.awt.*;
-
-//Pour fermer
 import java.awt.event.WindowAdapter;
-
-//Pour fermer
 import java.awt.event.WindowEvent;
 
 public abstract class AbstractSolution extends Frame {
@@ -57,13 +52,16 @@ public abstract class AbstractSolution extends Frame {
         int frameWidth = getSize().width;
 
         // La couleur avec laquelle on va dessiner
-        // g2d.translate(frameWidth/2,frameHeight/2); //pour déplacer l'origine
+        g2d.setColor(Color.BLACK);
+
+        // pour déplacer
+        // l'origine
         // si besoin
-        g2d.setColor(Color.black);
+        // g2d.translate(frameWidth / 2, frameHeight / 2);
 
         // mettre ici un appel de drawSolutionk avec une liste d'arguments
         // adaptés, par exemple :
-        drawSolutionk(g2d, frameWidth / 4, frameHeight / 4, frameWidth / 4,
+        drawSolutionk(g2d, frameWidth / 20, frameHeight / 20, frameWidth / 4,
                 profondeur);
     }
 
