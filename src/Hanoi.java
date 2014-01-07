@@ -167,13 +167,13 @@ public class Hanoi {
         tower2.display(xMiddle, yBottom, g);
         tower3.display(xRight, yBottom, g);
         try {
-            Thread.sleep(501);
+            Thread.sleep(500);
         } catch (Exception e) {
         }
     }
     
     public static void main(String[] args) {
-        new Hanoi(4);
+        new Hanoi(3);
     }
 
     /**
@@ -191,12 +191,12 @@ public class Hanoi {
         public void display(int x, int y, Graphics g) {
             for (int i = 0; i < size(); i++) {
                 int width = 20 * get(i);
-                g.setColor(Color.red);
-               // g.fillRoundRect(x - width / 2, y - 10 * (i + 1), width + 1, 10,
-                 //       10, 10);
                 g.setColor(Color.black);
                 g.drawRoundRect(x - width / 2, y - 10 * (i + 1), width + 1, 10,
                         10, 10);
+                //g.setColor(Color.black);
+                //g.fillRoundRect(x - width / 2, y - 10 * (i + 1), width + 1, 10,
+                 //       10, 10);
             }
         }
     }
