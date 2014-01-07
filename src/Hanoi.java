@@ -68,9 +68,9 @@ public class Hanoi {
         xLeft = (int) (0.2 * width);
         xMiddle = (int) (0.5 * width);
         xRight = (int) (int) (0.8 * width);
-        yBottom = (int) (0.75 * height);
-        yTop = yBottom - 100;
-        pegWidth = xLeft;
+        yBottom = (int) (0.8 * height);
+        yTop = yBottom - 250;
+        pegWidth = xLeft + 150;
         pegSpace = (int) ((width - 3 * pegWidth) / 4.0);
     }
 
@@ -135,19 +135,22 @@ public class Hanoi {
      * @param g
      */
     public void drawLines(Graphics g) {
+        
+        // Draw the support
+        g.setColor(Color.black);
+        g.drawRoundRect((int) (0.5*xLeft), yBottom, (int) (0.8*width), (int) (0.03*height), 10, 10);
+        //g.fillRoundRect((int) (0.5*xLeft), yBottom, (int) (0.8*width), (int) (0.03*height), 10, 10);
+        
+        g.setColor(Color.black);
         // Draw lines for the left tower
         g.drawLine(xLeft, yBottom, xLeft, yTop);
-        g.drawLine(pegSpace, yBottom, pegSpace + pegWidth, yBottom);
-
+        
         // Draw lines for the middle tower
         g.drawLine(xMiddle, yBottom, xMiddle, yTop);
-        g.drawLine(2 * pegSpace + pegWidth, yBottom, 2 * pegSpace + 2
-                * pegWidth, yBottom);
 
         // Draw lines for the right tower
         g.drawLine(xRight, yBottom, xRight, yTop);
-        g.drawLine(3 * pegSpace + 2 * pegWidth, yBottom, 3 * pegSpace + 3
-                * pegWidth, yBottom);
+        
     }
 
     /**
@@ -179,7 +182,7 @@ public class Hanoi {
     class TowerStack extends Stack<Integer> {
 
         /**
-         * Display a tower and its disks
+         * Display disks for a step
          * 
          * @param x
          * @param y
@@ -189,8 +192,8 @@ public class Hanoi {
             for (int i = 0; i < size(); i++) {
                 int width = 20 * get(i);
                 g.setColor(Color.red);
-                g.fillRoundRect(x - width / 2, y - 10 * (i + 1), width + 1, 10,
-                        10, 10);
+               // g.fillRoundRect(x - width / 2, y - 10 * (i + 1), width + 1, 10,
+                 //       10, 10);
                 g.setColor(Color.black);
                 g.drawRoundRect(x - width / 2, y - 10 * (i + 1), width + 1, 10,
                         10, 10);
