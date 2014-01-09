@@ -12,16 +12,17 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 /**
- * This program show the moves of the Towers of Hanoi puzzle
- * There is a lot of test with empty(), that's because if I try to pop or see
- * the top of a stack that is empty, it will throw an exception
+ * This program show the moves of the Towers of Hanoi puzzle There is a lot of
+ * test with empty(), that's because if I try to pop or see the top of a stack
+ * that is empty, it will throw an exception
  * 
- * Il y a un bug, dont je n'ai aucune idee de l'origine, ni pourquoi. Il apparait lors
- * de l'utilisation de la methode iterative car ce qu'il se passe, 
+ * Il y a un bug, dont je n'ai aucune idee de l'origine, ni pourquoi. Il
+ * apparait lors de l'utilisation de la methode iterative car ce qu'il se passe,
  * est que, lorsque le plus petit disque est en haut de la pile, il va bugger.
- * C'est a dire que lorsque je test, pour savoir si le plus petit disque est en haut de la pile, 
- * il va me renvoyer le disque qui se trouve en dessous. Et la taille de la pile sera de n-1 au
- * lieu de n et fait donc totalement bugger l'algorithme, qui lui est juste.
+ * C'est a dire que lorsque je test, pour savoir si le plus petit disque est en
+ * haut de la pile, il va me renvoyer le disque qui se trouve en dessous. Et la
+ * taille de la pile sera de n-1 au lieu de n et fait donc totalement bugger
+ * l'algorithme, qui lui est juste.
  * 
  * @author Nabil EL MOUSSAID
  */

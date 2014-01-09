@@ -28,6 +28,8 @@ public abstract class AbstractSolution extends Frame {
         addWindowListener(new WindowHandler());
 
         setTitle("Dessins recursifs au niveau : " + profondeur);
+
+        this.setAlwaysOnTop(true);
     }
 
     private class WindowHandler extends WindowAdapter {
@@ -70,5 +72,5 @@ public abstract class AbstractSolution extends Frame {
      * : L'objet graphique dans lequel on dessine int ... arg : les coordonnées,
      * longueur et autres si besoin, et profondeur de récursivité
      **/
-    public abstract void drawSolutionk(Graphics drawingArea, int... arg);
+    public abstract void drawSolutionk(Graphics2D drawingArea, int... arg);
 }

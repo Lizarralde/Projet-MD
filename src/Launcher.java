@@ -21,6 +21,8 @@ public class Launcher {
 
         System.out.println("3 - F3kSolution");
 
+        System.out.println("4 - F4kSolution");
+
         i = p.getInt();
 
         System.out.println("Quelle profondeur voulez-vous ?");
@@ -44,6 +46,12 @@ public class Launcher {
         case 3:
 
             new F3kSolution(j);
+
+            break;
+
+        case 4:
+
+            new F4kSolution(j);
 
             break;
         }

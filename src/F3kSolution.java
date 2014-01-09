@@ -1,4 +1,4 @@
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 /**
  * 
@@ -15,7 +15,7 @@ public class F3kSolution extends AbstractSolution {
     }
 
     @Override
-    public void drawSolutionk(Graphics drawingArea, int... arg) {
+    public void drawSolutionk(Graphics2D drawingArea, int... arg) {
 
         if (arg[3] == 0) {
 
