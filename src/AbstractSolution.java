@@ -57,12 +57,12 @@ public abstract class AbstractSolution extends Frame {
         // pour déplacer
         // l'origine
         // si besoin
-        // g2d.translate(frameWidth / 2, frameHeight / 2);
+        g2d.translate(frameWidth / 4, frameHeight / 4);
 
         // mettre ici un appel de drawSolutionk avec une liste d'arguments
         // adaptés, par exemple :
         drawSolutionk(g2d, frameWidth / 20, frameHeight / 20, frameWidth / 4,
-                profondeur);
+                profondeur, 1, 1, 1, 1);
     }
 
     /**

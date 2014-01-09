@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics;
 
 /**
@@ -22,111 +23,38 @@ public class F2kSolution extends AbstractSolution {
             return;
         }
 
+        drawingArea.setColor(Color.GREEN);
+
+        drawingArea.fillOval(arg[0], arg[1], arg[2], arg[2]);
+
+        drawingArea.setColor(Color.BLACK);
+
         drawingArea.drawOval(arg[0], arg[1], arg[2], arg[2]);
 
         arg[3]--;
 
-        drawEastSolutionk(drawingArea, arg[0] + arg[2], arg[1] + arg[2] / 4,
-                arg[2] / 2, arg[3]);
+        if (arg[4] == 1) {
 
-        drawSouthSolutionk(drawingArea, arg[0] + arg[2] / 4, arg[1] + arg[2],
-                arg[2] / 2, arg[3]);
-
-        drawWestSolutionk(drawingArea, arg[0] - arg[2] / 2,
-                arg[1] + arg[2] / 4, arg[2] / 2, arg[3]);
-
-        drawNorthSolutionk(drawingArea, arg[0] + arg[2] / 4, arg[1] - arg[2]
-                / 2, arg[2] / 2, arg[3]);
-    }
-
-    public void drawNorthSolutionk(Graphics drawingArea, int... arg) {
-
-        if (arg[3] == 0) {
-
-            return;
+            drawSolutionk(drawingArea, arg[0] + arg[2] / 4,
+                    arg[1] - arg[2] / 2, arg[2] / 2, arg[3], 1, 1, 0, 1);
         }
 
-        drawingArea.drawOval(arg[0], arg[1], arg[2], arg[2]);
+        if (arg[5] == 1) {
 
-        arg[3]--;
-
-        drawEastSolutionk(drawingArea, arg[0] + arg[2], arg[1] + arg[2] / 4,
-                arg[2] / 2, arg[3]);
-
-        drawWestSolutionk(drawingArea, arg[0] - arg[2] / 2,
-                arg[1] + arg[2] / 4, arg[2] / 2, arg[3]);
-
-        drawNorthSolutionk(drawingArea, arg[0] + arg[2] / 4, arg[1] - arg[2]
-                / 2, arg[2] / 2, arg[3]);
-    }
-
-    public void drawSouthSolutionk(Graphics drawingArea, int... arg) {
-
-        if (arg[3] == 0) {
-
-            return;
+            drawSolutionk(drawingArea, arg[0] + arg[2], arg[1] + arg[2] / 4,
+                    arg[2] / 2, arg[3], 1, 1, 1, 0);
         }
 
-        drawingArea.drawOval(arg[0], arg[1], arg[2], arg[2]);
+        if (arg[6] == 1) {
 
-        arg[3]--;
-
-        drawEastSolutionk(drawingArea, arg[0] + arg[2], arg[1] + arg[2] / 4,
-                arg[2] / 2, arg[3]);
-
-        drawWestSolutionk(drawingArea, arg[0] - arg[2] / 2,
-                arg[1] + arg[2] / 4, arg[2] / 2, arg[3]);
-
-        drawSouthSolutionk(drawingArea, arg[0] + arg[2] / 4, arg[1] + arg[2],
-                arg[2] / 2, arg[3]);
-    }
-
-    public void drawEastSolutionk(Graphics drawingArea, int... arg) {
-
-        if (arg[3] == 0) {
-
-            return;
+            drawSolutionk(drawingArea, arg[0] + arg[2] / 4, arg[1] + arg[2],
+                    arg[2] / 2, arg[3], 0, 1, 1, 1);
         }
 
-        drawingArea.drawOval(arg[0], arg[1], arg[2], arg[2]);
+        if (arg[7] == 1) {
 
-        arg[3]--;
-
-        drawNorthSolutionk(drawingArea, arg[0] + arg[2] / 4, arg[1] - arg[2]
-                / 2, arg[2] / 2, arg[3]);
-
-        drawEastSolutionk(drawingArea, arg[0] + arg[2], arg[1] + arg[2] / 4,
-                arg[2] / 2, arg[3]);
-
-        drawSouthSolutionk(drawingArea, arg[0] + arg[2] / 4, arg[1] + arg[2],
-                arg[2] / 2, arg[3]);
-    }
-
-    public void drawWestSolutionk(Graphics drawingArea, int... arg) {
-
-        if (arg[3] == 0) {
-
-            return;
+            drawSolutionk(drawingArea, arg[0] - arg[2] / 2,
+                    arg[1] + arg[2] / 4, arg[2] / 2, arg[3], 1, 0, 1, 1);
         }
-
-        drawingArea.drawOval(arg[0], arg[1], arg[2], arg[2]);
-
-        arg[3]--;
-
-        drawNorthSolutionk(drawingArea, arg[0] + arg[2] / 4, arg[1] - arg[2]
-                / 2, arg[2] / 2, arg[3]);
-
-        drawSouthSolutionk(drawingArea, arg[0] + arg[2] / 4, arg[1] + arg[2],
-                arg[2] / 2, arg[3]);
-
-        drawWestSolutionk(drawingArea, arg[0] - arg[2] / 2,
-                arg[1] + arg[2] / 4, arg[2] / 2, arg[3]);
-    }
-
-    public static void main(String[] args) {
-
-        Parser p = new Parser();
-
-        new F2kSolution(p.getInt());
     }
 }

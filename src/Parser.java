@@ -1,3 +1,4 @@
+import java.io.InputStream;
 import java.util.Scanner;
 
 /**
@@ -9,20 +10,16 @@ public class Parser {
 
     private Scanner s;
 
-    public Parser() {
+    public Parser(InputStream in) {
 
-        s = new Scanner(System.in);
+        s = new Scanner(in);
     }
 
     public int getInt() {
 
         int i;
 
-        System.out.println("Profondeur k ?");
-
         i = s.nextInt();
-
-        s.close();
 
         return i;
     }
